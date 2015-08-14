@@ -6,7 +6,7 @@
         "hashids",
         "public id",
         "short id",
-        "ofuscate id",
+        "ofuscate id"
     ],
     "license" : "MIT",
     "authors": [
