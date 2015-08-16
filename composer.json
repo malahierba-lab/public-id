@@ -1,12 +1,13 @@
 {
     "name": "malahierba-lab/public-id",
-    "description": "Easy id obfuscation for Laravel powered by hashids",
+    "description": "Easy id obfuscation for Laravel. Powered by hashids",
     "keywords": [
         "laravel",
         "hashids",
         "public id",
         "short id",
-        "ofuscate id"
+        "obfuscate id",
+        "id obfuscator"
     ],
     "license" : "MIT",
     "authors": [
