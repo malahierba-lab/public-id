@@ -1,4 +1,4 @@
-# Public ID
+# Laravel Public ID
 
 A simple and (almost) automatic short ids (like youtube ids) generator for your laravel projects. Powered by Hashids project (and malahierba dev team)
 
