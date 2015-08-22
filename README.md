@@ -32,7 +32,7 @@ Example for Post Model:
     	
     	//your code...
 
-After that, you need setup 2 static and protected variables: `public_id_salt` and `public_id_min_length`, in previous example:
+After that, you need setup two static and protected variables: `public_id_salt` and `public_id_min_length`, in previous example:
 
     <?php namespace App;
 
