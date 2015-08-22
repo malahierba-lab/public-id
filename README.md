@@ -1,6 +1,6 @@
 # Public ID
 
-A simple and (almost) automatic short ids (like youtube ids) for your laravel projects. Powered by Hashids project (and malahierba dev team)
+A simple and (almost) automatic short ids (like youtube ids) generator for your laravel projects. Powered by Hashids project (and malahierba dev team)
 
 ## Installation
 
@@ -64,7 +64,7 @@ Get the original ID with the public id string
 
 ## Big numbers
 
-The max ID than can be managed by default is a billion (1.000.000.000). But, depending of your environment this number could be bigger. For test the max ID than you can use the `testPublicIdMaxInt` function:
+The max ID than can be managed by default is a billion (1.000.000.000). But, depending of your environment this number could be bigger. For test the max ID in your environment setup you can use the `testPublicIdMaxInt` function:
 
     $max_id = Post::testPublicIdMaxInt();
     
