@@ -15,7 +15,7 @@ trait PublicId {
      */
     static public function publicIdDecode($public_id)
     {
-        $hashids = new Hashids(self::$public_id_salt, self::$public_id_min_length);
+        $hashids = new Hashids(self::getSalt(), self::getMinLength(), self::getAlphabet());
 
         $id = $hashids->decode($public_id);
 
