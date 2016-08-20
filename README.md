@@ -1,6 +1,6 @@
 # Laravel Public ID
 
-A simple and (almost) automatic short ids (like youtube ids) generator for your laravel projects. Powered by Hashids project (and malahierba dev team)
+A simple and automatic short ids (like youtube ids) generator for your laravel projects. Powered by Hashids project (and malahierba dev team)
 
 ## Installation
 
@@ -50,7 +50,7 @@ After that, you can setup the static variables to define the settings for the pu
     	
     	//your code...
 
-There are 4 predefined alphabets you can use.  Setting the `public_id_alphabet` variable to 'upper_alphanumeric', 'upper_alpha', 'lower_alphanumeric', 'lower_alpha' will use those predefined alphabets:
+There are 4 predefined alphabets you can use.  Setting the `public_id_alphabet` variable to `upper_alphanumeric`, `upper_alpha`, `lower_alphanumeric`, `lower_alpha` will use those predefined alphabets:
 
     upper_alphanumeric => ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
     upper_alpha => ABCDEFGHIJKLMNOPQRSTUVWXYZ
