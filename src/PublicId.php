@@ -36,7 +36,7 @@ trait PublicId {
      */
     public function getPublicIdAttribute()
     {
-        $hashids = new Hashids(self::$public_id_salt, self::$public_id_min_length);
+        $hashids = new Hashids(self::getSalt(), self::getMinLength(), self::getAlphabet());
 
         $primaryKey = $this->primaryKey;
 
@@ -68,8 +68,61 @@ trait PublicId {
      */
     static public function testPublicIdMaxInt()
     {
-        $hashids = new Hashids(self::$public_id_salt, self::$public_id_min_length);
+        $hashids = new Hashids(self::getSalt(), self::getMinLength(), self::getAlphabet());
 
         return $hashids->get_max_int_value();
+    }
+
+    /**
+     * Get the alphabet property, if it's set by the user.
+     *
+     * @access private
+     * @return string
+     */
+    static private function getAlphabet(){
+        if(property_exists(self::class, 'public_id_alphabet')){
+            switch(self::$public_id_alphabet){
+                case 'upper_alphanumeric':
+                    return "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                case 'upper_alpha':
+                    return "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                case 'lower_alphanumeric':
+                    return "abcdefghijklmnopqrstuvwxyz0123456789";
+                case 'lower_alpha':
+                    return "abcdefghijklmnopqrstuvwxyz";
+                default:
+                    return self::$public_id_alphabet;
+            }
+        }
+
+        return '';
+    }
+
+    /**
+     * Get the salt property, if the user has set it.
+     *
+     * @access private
+     * @return string
+     */
+    static private function getSalt(){
+        if(property_exists(self::class, 'public_id_salt')){
+            return self::$public_id_salt;
+        }
+
+        return '';
+    }
+
+    /**
+     * Get the min length property, if the user has set it.
+     *
+     * @access private
+     * @return integer
+     */
+    static private function getMinLength(){
+        if(property_exists(self::class, 'public_id_min_length')){
+            return self::$public_id_min_length;
+        }
+
+        return 0;
     }
 }
