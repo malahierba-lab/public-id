@@ -1,6 +1,6 @@
 # Laravel Public ID
 
-A simple and (almost) automatic short ids (like youtube ids) generator for your laravel projects. Powered by Hashids project (and malahierba dev team)
+A simple and automatic short ids (like youtube ids) generator for your laravel projects. Powered by Hashids project (and malahierba dev team)
 
 ## Installation
 
@@ -32,7 +32,7 @@ Example for Post Model:
     	
     	//your code...
 
-After that, you need setup two static and protected variables: `public_id_salt` and `public_id_min_length`, in previous example:
+After that, you can setup the static variables to define the settings for the publicID: `public_id_salt`, `public_id_min_length`, `public_id_alphabet`, in previous example:
 
     <?php namespace App;
 
@@ -45,8 +45,17 @@ After that, you need setup two static and protected variables: `public_id_salt` 
     	static protected $public_id_salt = 'some_string_for_salt_your_ids';
 
         static protected $public_id_min_length = 6; // min length for your generated short ids.
+        
+        static protected $public_id_alphabet = 'ABCDEFGHIJKLM'; // Only letters A-M
     	
     	//your code...
+
+There are 4 predefined alphabets you can use.  Setting the `public_id_alphabet` variable to `upper_alphanumeric`, `upper_alpha`, `lower_alphanumeric`, `lower_alpha` will use those predefined alphabets:
+
+    upper_alphanumeric => ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+    upper_alpha => ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    lower_alphanumeric => abcdefghijklmnopqrstuvwxyz0123456789
+    lower_alpha => abcdefghijklmnopqrstuvwxyz
 
 That's all. Now you can use the Public ID functionality in your Post Model:
 
